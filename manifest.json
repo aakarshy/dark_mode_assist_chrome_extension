@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Dark Mode Assist",
+	"description": "Quick launch Dark Mode Assist",
+	"version": "1.0.0",
+	"icons": {"128": "logo.png"},
+	"browser_action": {
+		"default_icon": "logo.png",
+		"default_popup": "popup.html"		 
+	},
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": ["*://*/*"],
+			"js": ["content.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": ["activeTab", "bookmarks", "tabs", "storage" ],
+	"browser_action": {
+		"default_title": "Created by Aakarsh, enjoy!",
+		"default_popup": "popup.html"
+	}
+}
